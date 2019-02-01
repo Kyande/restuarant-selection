@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'restuarant_app.apps.RestuarantAppConfig'
 ]
 
 MIDDLEWARE = [
@@ -116,5 +117,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
+MEDIA_URL = os.path.join(BASE_DIR, 'images/')
+MEDIA_ROOT = 'images'
+CLIPS_DIR = os.path.join(BASE_DIR, 'clips/')

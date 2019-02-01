@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant selection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{% static 'restuarant_app/logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'restuarant_app/css/suggestions.css' %}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{% url 'home' %}">Restaurants</a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <form id="form-preference" method="POST" action="{% url 'suggestions'%}">
+                        {% csrf_token %}
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="price" id="price">
+                            <option selected>What is your budget like?</option>
+                            <option value="low">low</option>
+                            <option value="medium">medium</option>
+                            <option value="high">high</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="place" id="place">
+                            <option selected>Where would you like to eat?</option>
+                            <option value="outskirts">Out skirts</option>
+                            <option value="cbd">CBD</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="cuisine" id="cuisine">
+                            <option selected>What cuisine would you like to eat?</option>
+                            <option value="International">International</option>
+                            <option value="Ethiopian">Ethiopian</option>
+                            <option value="Sandwiches">Sandwiches</option>
+                            <option value="Indian">Indian</option>
+                            <option value="African">African</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="ambiance" id="ambiance">
+                            <option selected>What experience are you looking for?</option>
+                            <option value="fine-dining">Fine dining</option>
+                            <option value="casual">Casual</option>
+                            <option value="fast-food">Fast-food</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="delivery" id="delivery">
+                            <option selected>Would like your food delivered?</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="alcohol" id="alcohol">
+                            <option selected>Would you like to be serverd alcohol?</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                          </select>
+                        </div>
+                        <div class="input-group mb-3">
+                          <select class="custom-select" name="vegetarian" id="vegetarian">
+                            <option selected>Is a vegetarian menu a preference?</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                          </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <footer>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>
