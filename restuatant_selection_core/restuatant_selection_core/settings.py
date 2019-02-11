@@ -117,7 +117,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+<<<<<<< HEAD
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 MEDIA_URL = os.path.join(BASE_DIR, 'images/')
 MEDIA_ROOT = 'images'
+=======
+STATIC_URL = '/static/'
+MEDIA_URL = os.path.join(BASE_DIR, 'images/')
+MEDIA_ROOT = 'images'
+CLIPS_DIR = os.path.join(BASE_DIR, 'clips/')
+>>>>>>> ui-for-clips

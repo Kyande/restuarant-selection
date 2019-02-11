@@ -7,6 +7,11 @@ from django.db import models
 # Create your models here.
 class Restaurant(models.Model):
     name = models.CharField(max_length=120, unique=True)
+<<<<<<< HEAD
+=======
+    restaurant_id = models.IntegerField(default=0)
+    cuisine = models.CharField(max_length=255)
+>>>>>>> ui-for-clips
     description = models.TextField()
     location = models.CharField(max_length=255)
     opening_time = models.CharField(max_length=150)
@@ -14,6 +19,10 @@ class Restaurant(models.Model):
         upload_to='res_photos/',
         default='res_photos/default.png'
     )
+<<<<<<< HEAD
+=======
+    rating = models.IntegerField()
+>>>>>>> ui-for-clips
 
     def __str__(self):
         return self.name

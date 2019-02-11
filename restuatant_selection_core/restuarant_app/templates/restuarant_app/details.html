@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant selection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="{% static 'restuarant_app/logo.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'restuarant_app/css/suggestions.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{% url 'home' %}">Restaurants</a>
+        </nav>
+        <div class="container">
+            <div style="margin-top: 20px;" class="row">
+                <div style="float: left;" class="col-md-7">
+                    <img width="100%" src="{{restaurant.image.url}}" class="card-img-top" alt="...">
+                    <div style="text-align: justify;">
+                        <h3 style="padding-top: 20px;">{{ restaurant.name }}</h3>
+                        <i style="font-size: 19px;" class="material-icons">access_time</i>
+                        <span style="font-size: 18px">{{ restaurant.opening_time }}</span><br/>
+                        <i class="material-icons">gps_fixed</i>
+                        <span style="font-size: 18px">{{ restaurant.location }}</span>
+                        <hr/>
+                        {{ restaurant.description }}
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <h6>Reviews</h6>
+                        {% for review in reviews %}
+                            <div style="font-size: 30px; color: grey;">
+                                &lsquo;{{review.review}}&rsquo;<br/>
+                                <div  style="font-size: 15px; color: black; padding-left: 20px;">
+                                    by <i>{{review.name}}</i>
+                                </div>
+                            </div>
+                            {% if not forloop.last%}
+                                <hr/>
+                            {% endif %}
+                        {% empty %}
+                            <div class="alert alert-light" role="alert">
+                                No reviews yet...
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    <footer>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+</html>
