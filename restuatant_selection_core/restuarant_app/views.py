@@ -9,18 +9,6 @@ from .models import Restaurant, Review
 
 
 # Create your views here.
-<<<<<<< HEAD
-def index(request):
-    return render(request, 'restuarant_app/index.html', {'text': "hello world"})
-
-
-def suggestions(request):
-    return render(request, 'restuarant_app/suggestions.html', {})
-
-
-def about_us(request):
-    return render(request, 'restuarant_app/about.html', {})
-=======
 def home(request):
     return render(request, 'restuarant_app/home.html', {})
 
@@ -87,4 +75,3 @@ def query_clips(data):
     clips.Assert(preference)
     clips.Run()
     return clips.StdoutStream.Read()
->>>>>>> ui-for-clips
