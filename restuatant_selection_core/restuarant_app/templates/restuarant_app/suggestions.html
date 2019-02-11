@@ -26,7 +26,14 @@
                             <span style="display: inherit;">
                                 <h6 class="card-title">{{ restaurant.name }}</h6>
                             </span>
-                                <i style="float: right;color: #FFD700;font-size: 24px;" class="material-icons">star</i>
+                            <div style="float: left; font-size: 13px;">
+                                <i style="float:left;font-size:18px;padding-right:10px;" class="material-icons">gps_fixed</i>
+                                {{ restaurant.location }}<br/>
+                                <hr/>
+                                <i style="float:left;font-size:18px;padding-right:10px;" class="material-icons">access_time</i>
+                                {{ restaurant.opening_time }}
+                            </div>
+                            <i style="float: right;color: #FFD700;font-size: 24px;" class="material-icons">star</i>
                             <span style="float: right;">
                                 {{ restaurant.rating }}
                             </span>

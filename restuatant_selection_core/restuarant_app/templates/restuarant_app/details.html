@@ -21,7 +21,9 @@
                     <div style="text-align: justify;">
                         <h3 style="padding-top: 20px;">{{ restaurant.name }}</h3>
                         <i style="font-size: 19px;" class="material-icons">access_time</i>
-                        <span style="font-size: 18px">{{ restaurant.opening_time }}</span>
+                        <span style="font-size: 18px">{{ restaurant.opening_time }}</span><br/>
+                        <i class="material-icons">gps_fixed</i>
+                        <span style="font-size: 18px">{{ restaurant.location }}</span>
                         <hr/>
                         {{ restaurant.description }}
                     </div>
@@ -31,7 +33,7 @@
                         <h6>Reviews</h6>
                         {% for review in reviews %}
                             <div style="font-size: 30px; color: grey;">
-                                &ldquo;{{review.review}}&rdquo;<br/>
+                                &lsquo;{{review.review}}&rsquo;<br/>
                                 <div  style="font-size: 15px; color: black; padding-left: 20px;">
                                     by <i>{{review.name}}</i>
                                 </div>
@@ -44,7 +46,7 @@
                                 No reviews yet...
                             </div>
                         {% endfor %}
-                    </>
+                    </div>
                 </div>
             </div>
         </div>
