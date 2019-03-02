@@ -17,7 +17,23 @@ def details(request, restaurant_id):
     reviews = Review.objects.filter(restaurant=restaurant)
     return render(request, 'restuarant_app/details.html', {
         'restaurant': restaurant,
-        'reviews': reviews
+        'reviews': reviews,
+        'success': False
+    })
+
+
+def review(request, restaurant_id):
+    restaurant = Restaurant.objects.get(id=restaurant_id)
+    rest_review = Review()
+    rest_review.name = '{0} {1}'.format(request.POST['Firstname'].capitalize(),
+                                        request.POST['Lastname'].capitalize())
+    rest_review.review = request.POST['review'].capitalize()
+    rest_review.restaurant = restaurant
+    rest_review.save()
+    return render(request, 'restuarant_app/details.html', {
+        'restaurant': restaurant,
+        'reviews': Review.objects.filter(restaurant=restaurant),
+        'success': True
     })
 
 
